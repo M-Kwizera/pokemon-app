@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f8f7f3">
+    <meta name="description" content="Explore Pokémon, discover their abilities, and compare their power in this Pokédex.">
+    <title>Pokédex — Discover your next favorite</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="topbar shell">
+        <a class="brand" href="#" aria-label="Pokédex home">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span>Pokédex</span>
+        </a>
+        <span class="nav-note">Your little corner of the Pokémon world</span>
+    </header>
+
+    <main class="shell">
+        <section class="intro" aria-labelledby="page-title">
+            <div>
+                <p class="eyebrow">The ultimate field guide</p>
+                <h1 id="page-title">Meet your next<br>favorite Pokémon.</h1>
+                <p class="intro-copy">Explore Pokémon, discover their abilities, and see how their base stats stack up.</p>
+            </div>
+            <div class="trainer-badge">
+                <span class="trainer-avatar" aria-hidden="true">⚡</span>
+                <span><span class="trainer-title">Hey, Trainer!</span><span class="trainer-subtitle">Ready to explore?</span></span>
+            </div>
+        </section>
+
+        <section class="summary" aria-label="Pokédex overview">
+            <article class="summary-card">
+                <span class="summary-icon" aria-hidden="true">◉</span>
+                <span><span class="summary-label">Discovered</span><span class="summary-value" id="discovered-count">—</span></span>
+            </article>
+            <article class="summary-card">
+                <span class="summary-icon" aria-hidden="true">↗</span>
+                <span><span class="summary-label">Strongest so far</span><span class="summary-value" id="strongest-name">—</span></span>
+            </article>
+            <article class="summary-card">
+                <span class="summary-icon" aria-hidden="true">♡</span>
+                <span><span class="summary-label">Your favorites</span><span class="summary-value" id="favorite-count">0 Pokémon</span></span>
+            </article>
+        </section>
+
+        <section aria-labelledby="collection-title">
+            <div class="collection-heading">
+                <div>
+                    <h2 id="collection-title">Pokémon collection</h2>
+                    <p class="result-count" id="result-count" aria-live="polite">Loading your Pokédex...</p>
+                </div>
+                <div class="filters">
+                    <label class="search-wrap">
+                        <span class="search-icon" aria-hidden="true">⌕</span>
+                        <input class="search-input" id="search-input" type="search" placeholder="Search Pokémon..." aria-label="Search Pokémon by name">
+                    </label>
+                    <label>
+                        <span class="sr-only">Filter by type</span>
+                        <select class="filter-select" id="type-filter" aria-label="Filter by type">
+                            <option value="all">All types</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span class="sr-only">Sort Pokémon</span>
+                        <select class="filter-select" id="sort-filter" aria-label="Sort Pokémon">
+                            <option value="number">Pokédex order</option>
+                            <option value="power-desc">Power: high to low</option>
+                            <option value="power-asc">Power: low to high</option>
+                            <option value="name">Name: A to Z</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <div class="pokemon-grid" id="pokemon-grid" aria-live="polite" aria-busy="true"></div>
+            <button class="load-more" id="load-more" type="button" hidden>Load more Pokémon</button>
+        </section>
+        <p class="footer-note">Pokémon data and artwork provided by <a href="https://pokeapi.co/" target="_blank" rel="noreferrer">PokéAPI</a>. Pokémon is © Nintendo, Game Freak, and The Pokémon Company.</p>
+    </main>
+</body>
+</html>
